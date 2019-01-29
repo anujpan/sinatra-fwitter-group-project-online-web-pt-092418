@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   get "/signup" do
     @session = session
-    #binding.pry
     unless @session["user_id"]
       erb :"/users/signup"
     else
@@ -11,7 +10,6 @@ class UsersController < ApplicationController
   end
 
   get "/users/:slug" do
-   #binding.pry
     user = User.deslug(params[:slug])
     @tweets = user.tweets
     erb :"/tweets/show"
@@ -20,7 +18,6 @@ class UsersController < ApplicationController
   post "/signup" do
     user = User.new(params)
     if user.save
-      #save id in session
       session["user_id"] = user.id
       redirect "/tweets"
     else
