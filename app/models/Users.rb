@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   end
 
    def self.find_by_slug(str)
-    name = str.gsub("-", " ")
+    name = str.parameterize
     User.find_by_username(name)
   end
  end
