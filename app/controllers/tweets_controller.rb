@@ -63,9 +63,7 @@ class TweetsController < ApplicationController
     if tweet.user == User.find_by_id(session["user_id"])
       tweet.destroy
     end
-      redirect "/tweets"
-
-
+    redirect "/tweets"
   end
 
 
