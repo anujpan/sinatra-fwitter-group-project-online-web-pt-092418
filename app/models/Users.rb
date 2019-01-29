@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   def slug
-    #taken off stack overflow
     slug = self.username.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
   end
 
