@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   def slug
     binding.pry
-    slug = self.username.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
+    slug = self.username
   end
 
    def self.find_by_slug(str)
