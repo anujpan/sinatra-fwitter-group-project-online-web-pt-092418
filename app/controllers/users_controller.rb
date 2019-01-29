@@ -38,7 +38,6 @@ class UsersController < ApplicationController
   end
 
   post "/login" do
-    #binding.pry
     user = User.find_by_username(params[:username])
 
     if user && user.authenticate(params[:password])
