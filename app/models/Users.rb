@@ -14,6 +14,4 @@ class User < ActiveRecord::Base
     name = str.gsub("-", " ")
     User.find_by_username(name)
   end
-
-
  end
