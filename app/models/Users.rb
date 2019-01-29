@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true
 
   def slug
-    slug = self.username.gsub(' ', '-').gsub(/[^\w-]/, '')
+    slug = self.username.gsub(' ', '-')
   end
 
    def self.find_by_slug(str)
