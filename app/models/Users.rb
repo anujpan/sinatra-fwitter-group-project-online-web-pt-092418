@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   end
 
    def self.find_by_slug(str)
-     binding.pry
     name = str.parameterize
     User.find_by_username(name)
   end
