@@ -7,8 +7,16 @@
 
     <div class="container">
       <h1>Welcome to Fwitter!</h1>
-      <a href="/signup"> Signup </a> or <a href="/login">Login</a>
-  </div>
+      <nav>
+        <% if Helper.logged_in(session) %>
+          <a href="/logout"> Logout </a>
+        <% else %>
+          <a href="/signup"> Signup </a>
+          <a href="/login"> Log In </a>
+        <%end%>
+      </nav>
+      <%= yield %>
+    </div>
 
   </body>
 </html>
