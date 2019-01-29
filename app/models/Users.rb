@@ -5,12 +5,4 @@ class User < ActiveRecord::Base
   validates :password, presence: true
   validates :email, presence: true
 
-  def slug
-    slug = self.username.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
-  end
-
-   def self.find_by_slug(str)
-    name = str.gsub("-", " ")
-    User.find_by_username(name)
-  end
  end
