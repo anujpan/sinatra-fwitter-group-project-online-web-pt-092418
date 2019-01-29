@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   end
 
    def self.find_by_slug(str)
-    User.find_by_username(str.parameterize)
+    name = str.parameterize
+    User.find_by_username(name)
   end
  end
